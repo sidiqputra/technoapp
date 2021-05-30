@@ -14,4 +14,5 @@ node {
         withCredentials([usernamePassword(credentialsId: 'heroku-credential', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
             sh 'git push https://${GIT_USERNAME}:${GIT_PASSWORD}@git.heroku.com/mytechno-app.git'
         }
+      }
 }
