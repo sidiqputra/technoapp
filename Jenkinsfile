@@ -12,7 +12,7 @@ node {
 
       stage('Deploy') {
         withCredentials([string(credentialsId: 'heroku-token', variable: 'TOKEN')]) {
-            sh 'git push https://:${TOKEN}@git.heroku.com/mytechno-app.git'
+            sh 'git push https://:${TOKEN}@git.heroku.com/mytechno-app.git HEAD:main'
         }
       }
 }
