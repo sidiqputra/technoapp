@@ -10,6 +10,10 @@ node {
           sh 'npm install'
       }
 
+      stage('Test') {
+          sh 'npm test'
+      }
+
       stage('Deploy') {
         withCredentials([string(credentialsId: 'heroku-token', variable: 'TOKEN')]) {
             sh 'git push https://:${TOKEN}@git.heroku.com/mytechno-app.git HEAD:main'
